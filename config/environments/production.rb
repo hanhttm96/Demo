@@ -76,4 +76,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #config admin active dashboard
+  config.assets.precompile += ['active_admin.css']
+
+  config.action_mailer.default_url_options = { :host => 'hanhttm96.heroku.com' }
+    # Gmail SMTP server setup
+  ActionMailer::Base.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :enable_starttls_auto => true,
+  :port => 587,
+  :authentication => :plain,
+  :user_name => "myhanhqt96@gmail.com",
+  :password => 'myhanhqt1996@'
+  }
 end
